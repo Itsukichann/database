@@ -1,0 +1,68 @@
+[
+  {
+    index: 0,
+    img: 'https://telegra.ph/file/0fbc9deb24a71da4ac1b6.jpg',
+    jawaban: 'MARSHA LENATHEA',
+    deskripsi: 'M_R_S_H_ L_N_T_EA.'
+  },
+  {
+    index: 1,
+    img: 'https://telegra.ph/file/9ffe2e78462fee04a7097.jpg',
+    jawaban: 'LULU SALSABILA',
+    deskripsi: 'L_L_ S_L_AB_LA'
+  },
+  {
+    index: 2,
+    img: 'https://telegra.ph/file/b2160c93b9bf64fab2d20.jpg',
+    jawaban: 'ENGELINA CHRISTY',
+    deskripsi: 'E_NGEL_NA CH_IST_'
+  },
+  {
+    index: 3,
+    img: 'https://iili.io/2TeEVcB.jpg',
+    jawaban: 'AURELIA',
+    deskripsi: 'A_r_li_'
+  },
+  {
+    index: 4,
+    img: 'https://iili.io/2Te7OrX.jpg',
+    jawaban: 'GABRIELLA ABIGAIL',
+    deskripsi: 'Ga_ri_ll_ A_iga_l'
+  },
+  {
+    index: 5,
+    img: 'https://iili.io/2Te7Tej.jpg',
+    jawaban: 'CINDY YUVIA',
+    deskripsi: 'Cin_y Y_vi_'
+  },
+  {
+    index: 6,
+    img: 'https://iili.io/2TecSpa.jpg',
+    jawaban: 'FIONY ALVERIA',
+    deskripsi: 'F_ony Al_e_i_'
+  },
+  {
+    index: 7,
+    img: 'https://tmpfiles.org/dl/13651913/1727700734302.jpg',
+    jawaban: 'HILLARY ABIGAIL',
+    deskripsi: 'H_ll_ry A_iga_l'
+  },
+  {
+    index: 8,
+    img: 'https://iili.io/2TeEcZb.jpg',
+    jawaban: 'INDIRA SERUNI',
+    deskripsi: 'In_ira Se_un_'
+  },
+  {
+    index: 9,
+    img: 'https://iili.io/2TeOl5v.jpg',
+    jawaban: 'GRACE OKTAVIANI',
+    deskripsi: 'Gr_c_ Okt_vi_ni'
+  },
+  {
+    index: 10,
+    img: 'https://iili.io/2TeEAaS.jpg',
+    jawaban: 'REGIE WILIAN',
+    deskripsi: 'R_gi_ Wi_i_n'
+  }
+]
