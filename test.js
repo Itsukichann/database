@@ -9,56 +9,7 @@ const generateWAMessageContent = async (message, options) => {
 
     let m = {}
 
-    if (hasNonNullishProperty(message, "text")) {
-        const extContent = { text: message.text }
-
-        let urlInfo = message.linkPreview
-
-        if (typeof urlInfo === "undefined") {
-            urlInfo = await generateLinkPreviewIfRequired(
-                message.text,
-                options.getUrlInfo,
-                options.logger
-            )
-        }
-
-        if (urlInfo) {
-            extContent.canonicalUrl = urlInfo["canonical-url"]
-            extContent.matchedText = urlInfo["matched-text"]
-            extContent.jpegThumbnail = urlInfo.jpegThumbnail
-            extContent.description = urlInfo.description
-            extContent.title = urlInfo.title
-            extContent.previewType = 0
-
-            const img = urlInfo.highQualityThumbnail
-
-            if (img) {
-                extContent.thumbnailDirectPath = img.directPath
-                extContent.mediaKey = img.mediaKey
-                extContent.mediaKeyTimestamp = img.mediaKeyTimestamp
-                extContent.thumbnailWidth = img.width
-                extContent.thumbnailHeight = img.height
-                extContent.thumbnailSha256 = img.fileSha256
-                extContent.thumbnailEncSha256 = img.fileEncSha256
-            }
-        }
-
-        if (options.backgroundColor) {
-            extContent.backgroundArgb = await assertColor(
-                options.backgroundColor
-            )
-        }
-
-        if (options.textColor) {
-            extContent.textArgb = await assertColor(options.textColor)
-        }
-
-        if (options.font) {
-            extContent.font = options.font
-        }
-
-        m.extendedTextMessage = extContent
-    } else if (hasNonNullishProperty(message, "contacts")) {
+    if (hasNonNullishProperty(message, "contacts")) {
         const contactLen = message.contacts.contacts.length
 
         let contactMessage
@@ -849,6 +800,55 @@ const generateWAMessageContent = async (message, options) => {
         }
 
         m = { interactiveMessage }
+    } else if (hasNonNullishProperty(message, "text")) {
+        const extContent = { text: message.text }
+
+        let urlInfo = message.linkPreview
+
+        if (typeof urlInfo === "undefined") {
+            urlInfo = await generateLinkPreviewIfRequired(
+                message.text,
+                options.getUrlInfo,
+                options.logger
+            )
+        }
+
+        if (urlInfo) {
+            extContent.canonicalUrl = urlInfo["canonical-url"]
+            extContent.matchedText = urlInfo["matched-text"]
+            extContent.jpegThumbnail = urlInfo.jpegThumbnail
+            extContent.description = urlInfo.description
+            extContent.title = urlInfo.title
+            extContent.previewType = 0
+
+            const img = urlInfo.highQualityThumbnail
+
+            if (img) {
+                extContent.thumbnailDirectPath = img.directPath
+                extContent.mediaKey = img.mediaKey
+                extContent.mediaKeyTimestamp = img.mediaKeyTimestamp
+                extContent.thumbnailWidth = img.width
+                extContent.thumbnailHeight = img.height
+                extContent.thumbnailSha256 = img.fileSha256
+                extContent.thumbnailEncSha256 = img.fileEncSha256
+            }
+        }
+
+        if (options.backgroundColor) {
+            extContent.backgroundArgb = await assertColor(
+                options.backgroundColor
+            )
+        }
+
+        if (options.textColor) {
+            extContent.textArgb = await assertColor(options.textColor)
+        }
+
+        if (options.font) {
+            extContent.font = options.font
+        }
+
+        m.extendedTextMessage = extContent
     } else if (hasMedia) {
         m = await prepareWAMessageMedia(message, options)
     }
